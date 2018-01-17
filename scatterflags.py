@@ -89,7 +89,7 @@ def scatterflags(x,y,flags,r=5.,dr=5.,ax=None,nflags=None,colors=None,cmap=None,
     #Scatter plot for each flag
     #Smallest to largest (highest zorder to lowest = minzorder)
     for i in range(nflags):
-        flagged = np.where([int(chars[-i]) for chars in flags])
+        flagged = np.where([int(chars[-i-1]) for chars in flags])
         ax.scatter(x[flagged],y[flagged],s=ms[i],c=mpl.colors.to_hex(colors[i]),
                    lw=0,zorder=minzorder+nflags-i,**kwargs)
     

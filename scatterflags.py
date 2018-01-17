@@ -62,8 +62,10 @@ def scatterflags(x,y,flags,r=5.,dr=5.,ax=None,nflags=None,colors=None,cmap=None,
         if isinstance(flags[i], (int, long)):
             flags[i] = bin(flags[i])[2:]
     
-    #Ensure flags is a list
+    #Ensure flags is a list and x,y are arrays
     flags = list(flags)
+    x = np.array(x)
+    y = np.array(y)
     
     #Set number of flags if not explicit
     if nflags is None:

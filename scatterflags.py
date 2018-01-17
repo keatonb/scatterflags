@@ -20,7 +20,7 @@ Example usage:
     ax0.scatter(x,y,c='0',s=1,zorder=10,marker='*')
     ax0.set_xlabel('x')
     ax0.set_ylabel('y')
-    sf.flagbar(ax=ax1,flaglabels=['flag'+str(i) for i in range(6)],barlabel='flags',**kwargs)
+    sf.flagbar(cax=ax1,flaglabels=['flag'+str(i) for i in range(6)],barlabel='flags',**kwargs)
     plt.tight_layout()
     plt.show()
 

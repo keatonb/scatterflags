@@ -58,7 +58,9 @@ def scatterflags(x,y,flags,r=5.,dr=5.,ax=None,nflags=None,colors=None,cmap=None,
         ax = plt.gca()
     
     #Convert all integer strings to bitwise flags
-    flags = [bin(num)[2:] for num in flags if isinstance(num, (int, long))]
+    for i in range(len(flags)):
+        if isinstance(flags[i], (int, long)):
+            flags[i] = bin(flags[i])[2:]
     
     #Set number of flags if not explicit
     if nflags is None:

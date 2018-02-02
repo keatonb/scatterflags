@@ -20,7 +20,7 @@ Example usage:
     ax0.scatter(x,y,c='0',s=1,zorder=10,marker='*')
     ax0.set_xlabel('x')
     ax0.set_ylabel('y')
-    sf.flagbar(ax=ax1,flaglabels=['flag'+str(i) for i in range(6)],barlabel='flags',**kwargs)
+    sf.flagbar(cax=ax1,flaglabels=['flag'+str(i) for i in range(6)],barlabel='flags',**kwargs)
     plt.tight_layout()
     plt.show()
 
@@ -58,7 +58,7 @@ def scatterflags(x,y,flags,r=5.,dr=5.,ax=None,nflags=None,colors=None,cmap=None,
         ax = plt.gca()
     
     #Convert all integer strings to bitwise flags
-    flags = [bin(num)[2:] for num in flags if isinstance(num, (int, long))]
+    flags = [bin(num)[2:] for num in flags if isinstance(num, (int, long, np.integer))]
     
     #Set number of flags if not explicit
     if nflags is None:
